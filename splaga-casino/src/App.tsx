@@ -5,14 +5,7 @@ import NavTabs from './components/navagationbar';
 
 function App() {
   return (
-    <div className="Nav-Bar">
-        <div className="App-logo">
-          <img src={Logo}/>
-        </div>
-        <div className='Tabs'>
-          <NavTabs/>
-        </div>
-    </div>
+    <NavTabs/>
   );
 }
 
