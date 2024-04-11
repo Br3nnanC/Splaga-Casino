@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { Typography, Button } from '@mui/material';
+import css from '../App.module.css';
 
 // Define the type for the BalanceProps
 type BalanceProps = {
@@ -10,11 +11,7 @@ const theme = createTheme({
     palette: {
       primary: {
         main: '#FFFFFF',
-        // light: will be calculated from palette.primary.main,
-        // dark: will be calculated from palette.primary.main,
-        // contrastText: will be calculated to contrast with palette.primary.main
-      },
-  
+      }
     },
   });
 
@@ -43,8 +40,8 @@ const Balance: React.FC<BalanceProps> = ({ initialBalance }) => {
             Balance: ${balance}
         </Typography>
 
-        <Button size="large" variant="outlined" color="primary" className="account-button" onClick={() => deposit(100)}>Deposit $100</Button>
-        <Button size="large" variant="outlined" color="primary" className="account-button" onClick={() => withdraw(100)}>withdraw $100</Button>
+        <Button size="large" variant="outlined" color="primary" className={css["deposit-button"]} onClick={() => deposit(100)}>Deposit $100</Button>
+        <Button size="large" variant="outlined" color="primary" className={css["withdraw-button"]} onClick={() => withdraw(100)}>withdraw $100</Button>
     </ThemeProvider>
   );
 };export default Balance;

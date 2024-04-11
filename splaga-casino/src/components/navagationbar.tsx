@@ -1,17 +1,14 @@
 import * as React from 'react';
 import { Grid, Button, Link, ThemeProvider, Typography } from '@mui/material';
 import Logo from '../assets/splaga.png';
-import '../App.css';
 import { createTheme } from '@mui/material/styles';
 import Balance from './balance'
+import css from '../App.module.css';
 
 const theme = createTheme({
   palette: {
     primary: {
       main: '#FFFFFF',
-      // light: will be calculated from palette.primary.main,
-      // dark: will be calculated from palette.primary.main,
-      // contrastText: will be calculated to contrast with palette.primary.main
     },
 
   },
@@ -20,7 +17,7 @@ const theme = createTheme({
 
 function NavTabs() {
   return (
-<Grid container justify-content="space-evenly" className="top-bar" >
+<Grid container justify-content="space-evenly" className={css["top-bar"]} >
       <Grid item mt={1} ml={1}>
         <Link href="/"><img src={Logo}  style={{ width: "200px", height: "200px" }}/></Link>
       </Grid>
@@ -33,10 +30,9 @@ function NavTabs() {
       </ThemeProvider>
       </Grid>
 
-      <Grid container item mt={-22} mr={6} justifyContent="end" className="navigation-buttons">
+      <Grid container item mt={-20} mr={6} justifyContent="end">
         <Grid item>
           <ThemeProvider theme={theme}>
-            {/* <Button size="large" variant="outlined" color="primary" className="account-button">Account</Button> */}
             <Balance initialBalance={1000}/>
           </ThemeProvider>
         </Grid>
